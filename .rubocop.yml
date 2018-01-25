@@ -1,0 +1,48 @@
+inherit_from: .rubocop_todo.yml
+
+# the schema.rb is auto generated, therefore all cops are disabled
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'vendor/**/*' # CircleCI doesn't exclude vendor/ by default
+
+# Gemfile should be ordered in a logical way, not alphabetical
+Bundler/OrderedGems:
+  Exclude:
+    - 'Gemfile'
+
+# Exclusion of files, that don't benefit from a strict limit
+Metrics/LineLength:
+  Exclude:
+    - 'db/sample/*'
+    - 'config/initializers/devise.rb'
+  Max: 120
+
+# Migration scripts should be simple (method length should me inversely proportional to the complexity)
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'
+
+# Migration scripts should be simple (method length should me inversely proportional to the complexity)
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/*'
+
+# Files in these directories follow a different naming convention
+Style/FileName:
+  Exclude:
+    - 'db/sample/*'
+    - 'db/load-test/*'
+
+# Currently no documentation is forced
+Style/Documentation:
+  Exclude:
+    - '**/*'
+
+# enforce brackets makes the array more explicit and easier to read
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+# enforce brackets makes the array more explicit and easier to read
+Style/WordArray:
+  EnforcedStyle: brackets
