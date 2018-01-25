@@ -22,4 +22,8 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: fitness-challenge-prototype-production
+  username: fitness-challenge-prototype
+  password: <%= ENV['FITNESS-CHALLENGE-PROTOTYPE_DATABASE_PASSWORD'] %>
