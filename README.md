@@ -3,3 +3,5 @@
 * CircleCI: Code check based on rubocop and unit tests
 * Heroku: deployment for test and demo
 * Gitter: chat and log
+* CDN: Amazon CloudFront
+* Performance Monitoring: New relic
