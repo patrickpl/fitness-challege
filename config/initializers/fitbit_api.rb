@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FitbitAPI.configure do |config|
   config.client_id       = Rails.application.secrets.fitbit_api_client_id
   config.client_id       = Rails.application.secrets.fitbit_api_client_secret

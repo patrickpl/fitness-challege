@@ -4,6 +4,7 @@ inherit_from: .rubocop_todo.yml
 AllCops:
   Exclude:
     - 'db/schema.rb'
+    - 'bin/*'
     - 'vendor/**/*' # CircleCI doesn't exclude vendor/ by default
 
 # Gemfile should be ordered in a logical way, not alphabetical
@@ -29,7 +30,7 @@ Metrics/AbcSize:
     - 'db/migrate/*'
 
 # Files in these directories follow a different naming convention
-Style/FileName:
+Naming:
   Exclude:
     - 'db/sample/*'
     - 'db/load-test/*'
